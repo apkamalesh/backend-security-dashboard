@@ -2,11 +2,17 @@ package com.example.hcl_project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 
-@EnableScheduling
-@SpringBootApplication
+@SpringBootApplication(
+		exclude = {
+				DataSourceAutoConfiguration.class,
+				HibernateJpaAutoConfiguration.class
+		}
+)
 public class HclProjectApplication {
+
 	public static void main(String[] args) {
 		SpringApplication.run(HclProjectApplication.class, args);
 	}
