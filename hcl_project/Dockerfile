@@ -7,6 +7,9 @@ COPY .mvn .mvn
 COPY pom.xml pom.xml
 COPY src src
 
+# 🔑 FIX: give execute permission
+RUN chmod +x mvnw
+
 RUN ./mvnw clean package -DskipTests
 
 EXPOSE 8080
