@@ -1,12 +1,15 @@
 package com.example.hcl_project.repository;
 
 import com.example.hcl_project.model.ThreatLog;
-import org.springframework.data.jpa.repository.*;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Repository   // ✅ THIS IS THE KEY FIX
 public interface ThreatLogRepository extends JpaRepository<ThreatLog, Long> {
 
     List<ThreatLog> findTop10ByOrderByTimeDesc();
