@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Repository   // ⭐ REQUIRED
+@Repository
 public interface ThreatLogRepository extends JpaRepository<ThreatLog, Long> {
 
     List<ThreatLog> findTop10ByOrderByTimeDesc();

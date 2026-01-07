@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories(basePackages = "com.example.hcl_project.repository")
 @EntityScan(basePackages = "com.example.hcl_project.model")
 public class HclProjectApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(HclProjectApplication.class, args);
 	}
 }
+
