@@ -13,9 +13,13 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://splendid-seahorse-3f52e4.netlify.app") // your netlify URL
+                        .allowedOrigins(
+                                "http://localhost:5173",
+                                "https://splendid-seahorse-3f52e4.netlify.app"
+                        )
                         .allowedMethods("*")
-                        .allowedHeaders("*");
+                        .allowedHeaders("*")
+                        .allowCredentials(true);
             }
         };
     }
