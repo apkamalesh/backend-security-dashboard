@@ -16,7 +16,7 @@ public class ThreatLog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = true)
+
     private String category;     // LOGIN / API / MALWARE
 
     @Column(nullable = false)
