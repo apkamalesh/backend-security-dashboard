@@ -7,6 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class CorsConfig {
+
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
@@ -17,10 +18,11 @@ public class CorsConfig {
                                 "http://localhost:5173",
                                 "https://splendid-seahorse-3f52e4.netlify.app"
                         )
-                        .allowedMethods("*")
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
             }
         };
     }
 }
+
